@@ -1,0 +1,826 @@
+/* =========================================
+   SHEILA'S DEV QUEST
+   PROFESSIONAL FEMININE DEVELOPER THEME
+========================================= */
+
+:root {
+    --background: #faf8ff;
+    --surface: #ffffff;
+    --surface-soft: #f4f0ff;
+
+    --primary: #8b5cf6;
+    --primary-dark: #6d3fd1;
+    --pink: #ec4899;
+
+    --text: #211b2d;
+    --muted: #756d80;
+
+    --border: #e8e0f2;
+
+    --success: #16a34a;
+    --error: #dc2626;
+
+    --shadow: 0 20px 50px rgba(68, 48, 100, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #f1eaff,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #ffeaf5,
+            transparent 35%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark {
+    --background: #110d19;
+    --surface: #1b1524;
+    --surface-soft: #261e31;
+
+    --text: #f8f5ff;
+    --muted: #b9afc5;
+
+    --border: #352b42;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #26143b,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #35172c,
+            transparent 35%
+        ),
+        var(--background);
+}
+
+
+/* =========================================
+   THEME BUTTON
+========================================= */
+
+.theme-toggle {
+    position: fixed;
+
+    top: 22px;
+    right: 22px;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    box-shadow: var(--shadow);
+
+    z-index: 100;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-3px) rotate(8deg);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.game-container {
+    width: min(100%, 1050px);
+
+    margin: auto;
+
+    padding:
+        80px 25px
+        50px;
+}
+
+
+/* =========================================
+   SCREEN SYSTEM
+========================================= */
+
+.screen {
+    display: none;
+
+    animation: fadeIn 0.5s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+#welcomeScreen {
+    min-height: 650px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+#welcomeScreen.active {
+    display: flex;
+}
+
+.welcome-content {
+    max-width: 720px;
+
+    margin: auto;
+}
+
+.avatar-wrapper {
+    width: 155px;
+    height: 155px;
+
+    margin: 0 auto 28px;
+
+    padding: 6px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--pink)
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(139, 92, 246, 0.25);
+}
+
+.main-avatar {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid var(--surface);
+
+    display: block;
+}
+
+
+.eyebrow {
+    color: var(--primary);
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: clamp(2.7rem, 7vw, 5rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.05em;
+
+    margin-bottom: 22px;
+}
+
+h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--pink)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.welcome-text {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    font-size: 1.08rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+
+.tech-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin:
+        28px auto
+        32px;
+}
+
+.tech-tags span {
+    padding:
+        8px 14px;
+
+    border-radius: 100px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.primary-button {
+    border: none;
+
+    padding:
+        14px 25px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--pink)
+        );
+
+    color: white;
+
+    font-size: 0.95rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 25px
+        rgba(139, 92, 246, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 30px
+        rgba(139, 92, 246, 0.3);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+}
+
+.small-text {
+    margin-top: 22px;
+
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================
+   GAME HEADER
+========================================= */
+
+.game-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.game-header h2 {
+    font-size: 2rem;
+}
+
+.header-actions {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.score-box,
+.level-box {
+    padding:
+        10px 15px;
+
+    border-radius: 10px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================
+   PROFILE CARD
+========================================= */
+
+.profile-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 22px;
+
+    margin-bottom: 25px;
+
+    border-radius: 18px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+.profile-avatar {
+    width: 75px;
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--primary);
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h3 {
+    font-size: 1.25rem;
+
+    margin-bottom: 3px;
+}
+
+.profile-info > p {
+    color: var(--muted);
+
+    margin-bottom: 14px;
+
+    font-size: 0.9rem;
+}
+
+.xp-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+}
+
+.xp-bar {
+    width: 100%;
+
+    height: 9px;
+
+    background: var(--surface-soft);
+
+    border-radius: 100px;
+
+    overflow: hidden;
+}
+
+#xpProgress {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--pink)
+        );
+
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================
+   QUESTION CARD
+========================================= */
+
+.question-card {
+    padding: clamp(22px, 5vw, 40px);
+
+    border-radius: 22px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+}
+
+.question-meta {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+
+    color: var(--muted);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+}
+
+.question-meta span:last-child {
+    color: var(--primary);
+}
+
+.question-card h3 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   ANSWERS
+========================================= */
+
+.answers {
+    display: grid;
+
+    gap: 12px;
+}
+
+.answer-button {
+    width: 100%;
+
+    text-align: left;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-size: 0.95rem;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.answer-button:hover:not(:disabled) {
+    border-color: var(--primary);
+
+    background: var(--surface-soft);
+
+    transform: translateX(4px);
+}
+
+.answer-button.correct {
+    border-color: var(--success);
+
+    background:
+        rgba(22, 163, 74, 0.1);
+}
+
+.answer-button.incorrect {
+    border-color: var(--error);
+
+    background:
+        rgba(220, 38, 38, 0.1);
+}
+
+.answer-button:disabled {
+    cursor: default;
+}
+
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.feedback {
+    min-height: 25px;
+
+    margin-top: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.6;
+}
+
+.feedback.correct {
+    color: var(--success);
+}
+
+.feedback.incorrect {
+    color: var(--error);
+}
+
+.next-button {
+    display: none;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================
+   RESULTS
+========================================= */
+
+#resultScreen {
+    min-height: 650px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+#resultScreen.active {
+    display: flex;
+}
+
+.result-content {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.result-icon {
+    font-size: 4rem;
+
+    margin-bottom: 20px;
+
+    animation: bounce 1.2s ease infinite;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.result-content h2 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+
+    margin-bottom: 12px;
+}
+
+.result-message {
+    color: var(--muted);
+
+    margin-bottom: 30px;
+}
+
+.result-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+.stat {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.05);
+}
+
+.stat strong {
+    display: block;
+
+    font-size: 1.7rem;
+
+    color: var(--primary);
+
+    margin-bottom: 5px;
+}
+
+.stat span {
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    padding:
+        20px;
+
+    color: var(--muted);
+
+    font-size: 0.75rem;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 650px) {
+
+    .game-container {
+        padding:
+            70px 16px
+            30px;
+    }
+
+    .game-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .score-box,
+    .level-box {
+        flex: 1;
+
+        text-align: center;
+    }
+
+    .profile-card {
+        align-items: flex-start;
+    }
+
+    .result-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .theme-toggle {
+        top: 12px;
+        right: 12px;
+    }
+
+    .question-card {
+        padding: 22px 18px;
+    }
+}

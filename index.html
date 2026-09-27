@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sheila's Dev Quest</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Theme Button -->
+    <button id="themeToggle" class="theme-toggle" type="button">
+        🌙
+    </button>
+
+    <main class="game-container">
+
+        <!-- =========================
+             WELCOME SCREEN
+        ========================== -->
+
+        <section id="welcomeScreen" class="screen active">
+
+            <div class="welcome-content">
+
+                <div class="avatar-wrapper">
+                    <img
+                        src="Image-shay/sheila-avatar.png"
+                        alt="Sheila developer avatar"
+                        class="main-avatar"
+                    >
+                </div>
+
+                <p class="eyebrow">
+                    WELCOME TO MY DIGITAL WORLD
+                </p>
+
+                <h1>
+                    Sheila's <span>Dev Quest</span>
+                </h1>
+
+                <p class="welcome-text">
+                    A professional interactive coding adventure
+                    where every challenge helps you level up.
+                </p>
+
+                <div class="tech-tags">
+                    <span>Python</span>
+                    <span>JavaScript</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>SQL</span>
+                    <span>Cybersecurity</span>
+                </div>
+
+                <button id="startGame" class="primary-button" type="button">
+                    Start My Quest →
+                </button>
+
+                <p class="small-text">
+                    Built by Sheila • Computer Science Student
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GAME SCREEN
+        ========================== -->
+
+        <section id="gameScreen" class="screen">
+
+            <header class="game-header">
+
+                <div>
+                    <p class="eyebrow">
+                        SHEILA'S DEV QUEST
+                    </p>
+
+                    <h2>
+                        Challenge Arena
+                    </h2>
+                </div>
+
+                <div class="header-actions">
+
+                    <div class="score-box">
+                        ⭐ <span id="score">0</span>
+                    </div>
+
+                    <div class="level-box">
+                        Level <span id="level">1</span>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile-card">
+
+                <img
+                    src="Image-shay/sheila-avatar.png.png"
+                    alt="Sheila avatar"
+                    class="profile-avatar"
+                >
+
+                <div class="profile-info">
+
+                    <h3>
+                        Sheila
+                    </h3>
+
+                    <p>
+                        Code Explorer
+                    </p>
+
+                    <div class="xp-row">
+                        <span>Experience</span>
+                        <span id="xpText">0 / 100 XP</span>
+                    </div>
+
+                    <div class="xp-bar">
+                        <div id="xpProgress"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION -->
+
+            <div class="question-card">
+
+                <div class="question-meta">
+
+                    <span id="questionNumber">
+                        Challenge 1
+                    </span>
+
+                    <span id="category">
+                        Programming
+                    </span>
+
+                </div>
+
+                <h3 id="question">
+                    Loading challenge...
+                </h3>
+
+                <div id="answers" class="answers"></div>
+
+                <div
+                    id="feedback"
+                    class="feedback"
+                    aria-live="polite">
+                </div>
+
+                <button
+                    id="nextQuestion"
+                    class="primary-button next-button"
+                    type="button">
+                    Next Challenge →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESULT SCREEN
+        ========================== -->
+
+        <section id="resultScreen" class="screen">
+
+            <div class="result-content">
+
+                <div class="result-icon">
+                    🏆
+                </div>
+
+                <p class="eyebrow">
+                    QUEST COMPLETE
+                </p>
+
+                <h2>
+                    Great work, Sheila!
+                </h2>
+
+                <p class="result-message">
+                    You've completed this coding challenge.
+                </p>
+
+                <div class="result-stats">
+
+                    <div class="stat">
+                        <strong id="finalScore">0</strong>
+                        <span>Score</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong id="finalXP">0</strong>
+                        <span>XP Earned</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong id="finalAccuracy">0%</strong>
+                        <span>Accuracy</span>
+                    </div>
+
+                </div>
+
+                <button
+                    id="restartGame"
+                    class="primary-button"
+                    type="button">
+                    Play Again ↻
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Sheila's Dev Quest
+            • Built with HTML, CSS & JavaScript
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
